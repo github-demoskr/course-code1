@@ -1,0 +1,15 @@
+name: First WorkFlow
+on: [push]     # events
+
+
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "hello"
+      - name: Mutileline run-shell-commands
+        run: |
+          node -v
+          pwd  
+     
