@@ -12,16 +12,16 @@ jobs:
         run: |
           node -v
           pwd  
-parallel-job-macos:
-  run-on: macos-latest
-  steps:
-    - name: view software verion
-      run: sw_vers
-dependant-job:
-  runs-on: windows-lates
-  needs: run-shell-commands  
-  steps:  
-    - name: echo a string 
-      run: Write-Ouput "windows String"
-    - name: Error steps
-      run: doesnotexits 
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: view software verion
+        run: sw_vers
+  dependant-job:
+    runs-on: windows-lates
+    needs: run-shell-commands  
+    steps:  
+      - name: echo a string 
+        run: Write-Ouput "windows String"
+      - name: Error steps
+        run: doesnotexits 
