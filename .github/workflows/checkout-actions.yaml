@@ -1,0 +1,13 @@
+name: simple-actions
+on: [push]
+
+jobs:
+    checkout-actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: List files before checkout
+              run: ls -a
+            - name: checkout from market place 
+              uses: actions/checkout@v4.1.1
+            - name: List after checkout
+              run: ls -a   
