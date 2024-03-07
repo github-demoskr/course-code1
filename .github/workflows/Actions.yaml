@@ -1,0 +1,20 @@
+name: simple-actions
+on: [push]
+
+jobs:
+    simple-actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display working directory & List the files
+              uses: actions/hello-world-javascript-action@main
+              with:
+                who-to-greet: Kar
+            - name: Log Greeting Time
+              run: echo "${{ steps.greet.outputs.time }}" 
+
+
+
+
+
+                       
+

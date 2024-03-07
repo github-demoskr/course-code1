@@ -2,8 +2,8 @@ name: working Dirs & Shells
 on: [push]
 defaults:
     run:
-       shell: bash 
-       #working-directory: /de/ed    # overwriting working directory 
+       shell: bash  # changing shell in workflow level
+       #working-directory: /de/ed    # overwriting working directory in workflow level
 jobs:
     display-wd-info-linux:
         runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
-            - name: Change working directory
+            - name: Change working directory   # overwriting/changing directory in job level
               working-directory: /home/runner
               run: pwd
                  
@@ -32,7 +32,7 @@ jobs:
                 echo $env:GITHUB_SHA
                 echo $env:GITHUB_REPOSITORY
                 echo $env:GITHUB_WORKSPACE  
-            - name: Python shell
+            - name: Python shell   # changing shell in at step level
               shell: python
               run: |
                 import platform
